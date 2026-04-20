@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 
 namespace axiomtechno.Models
 {
     public class Usuarios
     {
+        [Key]
         public int UsId { get; set; }
         public string UsNombre { get; set; }
         public string UsApellido { get; set; }
@@ -18,7 +20,7 @@ namespace axiomtechno.Models
         public long UsTelefono { get; set; }
         [NotMapped]
         public string NombreCompleto => $"{UsNombre} {UsApellido}";
-        public int IdRol { get; set; }
+        public int RolID { get; set; }
         public virtual Roles? Rol { get; set; }
     }
 }

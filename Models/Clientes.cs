@@ -1,7 +1,10 @@
-﻿namespace axiomtechno.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace axiomtechno.Models
 {
     public class Clientes
     {
+        [Key]
         public int ClId { get; set; }
         public string ClNombre { get; set; }
         public string ClDesc { get; set; }

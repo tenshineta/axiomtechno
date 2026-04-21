@@ -1,4 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using axiomtechno.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<axiomtechnocontext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("axiom") ?? throw new InvalidOperationException("Connection string 'axiom' not found.")));
+
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

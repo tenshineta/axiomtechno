@@ -12,8 +12,8 @@ using axiomtechno.Data;
 namespace axiomtechno.Migrations
 {
     [DbContext(typeof(axiomtechnoContext))]
-    [Migration("20260422000045_axiom")]
-    partial class axiom
+    [Migration("20260422035745_add-migration axiom")]
+    partial class addmigrationaxiom
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

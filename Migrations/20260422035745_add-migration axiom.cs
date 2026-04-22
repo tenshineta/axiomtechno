@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace axiomtechno.Migrations
 {
     /// <inheritdoc />
-    public partial class axiom : Migration
+    public partial class addmigrationaxiom : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

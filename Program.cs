@@ -7,7 +7,7 @@ using axiomtechno.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<axiomtechnoContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("axiomtechnoContext") ?? throw new InvalidOperationException("Connection string 'axiomtechnoContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Axiom") ?? throw new InvalidOperationException("Connection string 'Axiom' not found.")));
 
 
 // Add services to the container.

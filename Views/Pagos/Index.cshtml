@@ -1,0 +1,47 @@
+﻿@model IEnumerable<axiomtechno.Models.Pagos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PagMonto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PagFecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PagMonto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PagFecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PagId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PagId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PagId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

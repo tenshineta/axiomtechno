@@ -1,0 +1,68 @@
+﻿@model axiomtechno.Models.Clientes
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Clientes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClNombre" class="control-label"></label>
+                <input asp-for="ClNombre" class="form-control" />
+                <span asp-validation-for="ClNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClDesc" class="control-label"></label>
+                <input asp-for="ClDesc" class="form-control" />
+                <span asp-validation-for="ClDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClUrl" class="control-label"></label>
+                <input asp-for="ClUrl" class="form-control" />
+                <span asp-validation-for="ClUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClTelefono" class="control-label"></label>
+                <input asp-for="ClTelefono" class="form-control" />
+                <span asp-validation-for="ClTelefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClImagen" class="control-label"></label>
+                <input asp-for="ClImagen" class="form-control" />
+                <span asp-validation-for="ClImagen" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ClActivo" /> @Html.DisplayNameFor(model => model.ClActivo)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClFechaAlta" class="control-label"></label>
+                <input asp-for="ClFechaAlta" class="form-control" />
+                <span asp-validation-for="ClFechaAlta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClFechaBaja" class="control-label"></label>
+                <input asp-for="ClFechaBaja" class="form-control" />
+                <span asp-validation-for="ClFechaBaja" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

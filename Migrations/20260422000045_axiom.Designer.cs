@@ -11,8 +11,8 @@ using axiomtechno.Data;
 
 namespace axiomtechno.Migrations
 {
-    [DbContext(typeof(axiomtechnocontext))]
-    [Migration("20260421024618_axiom")]
+    [DbContext(typeof(axiomtechnoContext))]
+    [Migration("20260422000045_axiom")]
     partial class axiom
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace axiomtechno.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.0")
+                .HasAnnotation("ProductVersion", "9.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -132,14 +132,14 @@ namespace axiomtechno.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("UsDni")
+                    b.Property<long?>("UsDni")
                         .HasColumnType("bigint");
 
-                    b.Property<DateOnly>("UsFechaCreacion")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("UsFechaCreacion")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateOnly>("UsFechaNacimiento")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("UsFechaNacimiento")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("UsNombre")
                         .IsRequired()

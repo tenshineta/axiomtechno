@@ -10,9 +10,9 @@ namespace axiomtechno.Models
         public int UsId { get; set; }
         public string UsNombre { get; set; }
         public string UsApellido { get; set; }
-        public long UsDni { get; set; }
-        public DateOnly UsFechaNacimiento { get; set; }
-        public DateOnly UsFechaCreacion { get; set; } = new DateOnly();
+        public long? UsDni { get; set; }
+        public DateTime UsFechaNacimiento { get; set; }
+        public DateTime UsFechaCreacion { get; set; } = DateTime.Now;
         public string UsCorreo { get; set; }
         public string UsPasswordHash { get; set; }
         public string? token_recovery { get; set; }

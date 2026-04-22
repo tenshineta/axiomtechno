@@ -1,0 +1,95 @@
+﻿@model IEnumerable<axiomtechno.Models.Usuarios>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UsNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsApellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsDni)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsFechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsFechaCreacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsCorreo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsPasswordHash)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.token_recovery)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsActivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsTelefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rol)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsNombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsApellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsDni)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsFechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsFechaCreacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsCorreo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsPasswordHash)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.token_recovery)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsActivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsTelefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rol.RolId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UsId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UsId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UsId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

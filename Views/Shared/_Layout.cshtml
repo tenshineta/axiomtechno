@@ -37,6 +37,22 @@
                         </li>
                     </ul>
                 </div>
+                <div class="auth-area">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="auth-panel">
+                            <span class="auth-greet">Hola, @User.Identity.Name</span>
+                            <a class="btn btn-outline-success custom btn-sm" asp-controller="Login" asp-action="Salir" role="button">Cerrar sesión</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="auth-panel">
+                            <a class="btn btn-outline-success custom btn-sm" asp-area="" asp-controller="Login" asp-action="Ingresar" role="button">Iniciar sesión</a>
+                            <a class="btn btn-success custom btn-sm ms-2" asp-area="" asp-controller="Access" asp-action="Registrarse" role="button">Registro</a>
+                        </div>
+                    }
+                </div>
             </div>
         </nav>
     </header>
